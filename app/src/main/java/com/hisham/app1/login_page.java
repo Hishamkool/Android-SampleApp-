@@ -67,7 +67,6 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
 
 
 //    <<<<<<<<<<<<<<3. Button click using xml file
-
 //    public void login1(View view) {
 //        Toast.makeText(getApplicationContext(), "Clicked on login", Toast.LENGTH_LONG).show();
 //        Intent intobj = new Intent(getApplicationContext(), home.class);
