@@ -5,20 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-
 import android.view.View;
-
-
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class login_page extends AppCompatActivity implements View.OnClickListener {
 
     String defaultUsername = "admin";
     String defaultPassword = "password";
-
     TextView txtLogin;
     EditText usernameLogin;
     String usernameLoginValue;
@@ -80,7 +77,7 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
 
 
         //<<<<<<<<2. button click using Implement method
-        loginbtn.setOnClickListener(this);
+
         createacc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,6 +87,7 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
             }
         });
 
+        loginbtn.setOnClickListener(this);
 
     }
 
@@ -97,8 +95,10 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
     public void onClick(View view) {
 
 
-        String testUsername = usernameLogin.getText().toString();
-        String testPassword = passwordLogin.getText().toString();
+        String testUsername;
+        testUsername = usernameLogin.getText().toString();
+        String testPassword;
+        testPassword = passwordLogin.getText().toString();
 
         if (defaultUsername.equals(testUsername) && defaultPassword.equals(testPassword)) {
             Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_LONG).show();
