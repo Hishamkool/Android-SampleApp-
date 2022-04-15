@@ -25,6 +25,7 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
     String passwordLoginValue;
     EditText passwordLogin;
     Button loginbtn;
+    Button createacc;
     int maxchance = 3;
 
 
@@ -34,7 +35,9 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_login_page);// R.java  holds the id's of all resource files (res)
 
         txtLogin = (TextView) findViewById(R.id.txtLogin);
-        loginbtn = (Button) findViewById(R.id.login); // object "loginbtn" created for login button
+        loginbtn = (Button) findViewById(R.id.login);// object "loginbtn" created for login button
+
+        createacc = (Button)findViewById(R.id.create_account);
         usernameLogin = (EditText) findViewById(R.id.usernameLogin);
         passwordLogin = (EditText) findViewById(R.id.passwordLogin);
 
@@ -75,8 +78,17 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
 //        >>>>>>>>>>> animation test--------------------
 
 
+
         //<<<<<<<<2. button click using Implement method
         loginbtn.setOnClickListener(this);
+        createacc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"signup",Toast.LENGTH_LONG).show();
+                Intent intobj = new Intent(login_page.this, createaccount.class);
+                startActivity(intobj);
+            }
+        });
 
 
     }
@@ -122,13 +134,7 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
 
 
     //    <<<<<<<<<<<<<< Button click for create account using xml file
-    public void createaccount(View view) {
 
-        Toast.makeText(this, "Please Sign up", Toast.LENGTH_SHORT).show();
-
-        Intent intobj = new Intent(login_page.this, createaccount.class);
-        startActivity(intobj);
-    }
 
 
 }
