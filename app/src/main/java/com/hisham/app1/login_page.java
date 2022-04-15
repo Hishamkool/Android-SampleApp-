@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
+
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
+
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -21,10 +21,11 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
 
     TextView txtLogin;
     EditText usernameLogin;
+    String usernameLoginValue;
+    String passwordLoginValue;
     EditText passwordLogin;
     Button loginbtn;
-    int maxchance =3;
-
+    int maxchance = 3;
 
 
     @Override
@@ -32,10 +33,20 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);// R.java  holds the id's of all resource files (res)
 
-        txtLogin = (TextView)findViewById(R.id.txtLogin);
+        txtLogin = (TextView) findViewById(R.id.txtLogin);
         loginbtn = (Button) findViewById(R.id.login); // object "loginbtn" created for login button
-        usernameLogin = (EditText)findViewById(R.id.usernameLogin);
-        passwordLogin = (EditText)findViewById(R.id.passwordLogin);
+        usernameLogin = (EditText) findViewById(R.id.usernameLogin);
+        passwordLogin = (EditText) findViewById(R.id.passwordLogin);
+
+
+        usernameLoginValue= usernameLogin.getText().toString();
+        passwordLoginValue= passwordLogin.getText().toString();
+
+        Intent recivedData = getIntent();
+        usernameLoginValue = recivedData.getStringExtra("UserName");
+        passwordLoginValue = recivedData.getStringExtra("Password");
+        usernameLogin.setText(usernameLoginValue);
+        passwordLogin.setText(passwordLoginValue);
 
 //<<<<< 1.Button click using anonymous inner class
 //
@@ -67,32 +78,33 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
         //<<<<<<<<2. button click using Implement method
         loginbtn.setOnClickListener(this);
 
+
     }
 
     @Override
     public void onClick(View view) {
 
 
-    String testUsername = usernameLogin.getText().toString();
-    String testPassword = passwordLogin.getText().toString();
+        String testUsername = usernameLogin.getText().toString();
+        String testPassword = passwordLogin.getText().toString();
 
-    if (defaultUsername.equals(testUsername) && defaultPassword.equals(testPassword)) {
-        Toast.makeText(getApplicationContext(),"Login successful",Toast.LENGTH_LONG).show();
-        Intent intobj = new Intent(getApplicationContext(), home.class);
-        startActivity(intobj);
-        Toast.makeText(getApplicationContext(),"Welcome",Toast.LENGTH_LONG).show();
-    }else {
-        maxchance --;
-        Toast.makeText(getApplicationContext(),"Usename or password incorrect",Toast.LENGTH_SHORT).show();
-        if(maxchance == 0){
-            txtLogin.setText("Login Blocked");
-            loginbtn.setEnabled(false);
-            loginbtn.setBackgroundColor(Color.GRAY);
-            loginbtn.setTextColor(Color.WHITE);
-            Toast.makeText(getApplicationContext(),"Maximum attempts reached, login denied",Toast.LENGTH_LONG).show();
-            txtLogin.setTextColor(Color.RED);
+        if (defaultUsername.equals(testUsername) && defaultPassword.equals(testPassword)) {
+            Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_LONG).show();
+            Intent intobj = new Intent(getApplicationContext(), home.class);
+            startActivity(intobj);
+            Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_LONG).show();
+        } else {
+            maxchance--;
+            Toast.makeText(getApplicationContext(), "Usename or password incorrect", Toast.LENGTH_SHORT).show();
+            if (maxchance == 0) {
+                txtLogin.setText("Login Blocked");
+                loginbtn.setEnabled(false);
+                loginbtn.setBackgroundColor(Color.GRAY);
+                loginbtn.setTextColor(Color.WHITE);
+                Toast.makeText(getApplicationContext(), "Maximum attempts reached, login denied", Toast.LENGTH_LONG).show();
+                txtLogin.setTextColor(Color.RED);
+            }
         }
-    }
 
     }
 
