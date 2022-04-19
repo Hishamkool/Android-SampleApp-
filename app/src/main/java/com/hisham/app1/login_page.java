@@ -14,11 +14,11 @@ import android.widget.Toast;
 
 public class login_page extends AppCompatActivity implements View.OnClickListener {
 
-    // Dont find view by id globally only do that inside on create
+    // Dont find view by id globally, only do that inside on_create
 
 
     String defaultUsername = "admin";
-    String defaultPassword = "password";
+    String defaultPassword = "admin123";
     TextView txtLogin;
     EditText usernameLogin;
     String usernameLoginValue;
@@ -108,7 +108,7 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
         testPassword = passwordLogin.getText().toString();
         if (usernameLoginValue == null && passwordLoginValue == null) {
             if (defaultUsername.equals(testUsername) && defaultPassword.equals(testPassword)) {
-//            Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_LONG).show();
+
                 Intent intobj = new Intent(getApplicationContext(), home.class);
                 startActivity(intobj);
                 Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_LONG).show();
@@ -121,7 +121,7 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
                     loginbtn.setEnabled(false);
                     loginbtn.setBackgroundColor(Color.GRAY);
                     loginbtn.setTextColor(Color.WHITE);
-//                Toast.makeText(getApplicationContext(), "Maximum attempts reached, login denied", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Maximum attempts reached, login denied", Toast.LENGTH_LONG).show();
                     txtLogin.setTextColor(Color.RED);
                 }
             }
@@ -138,7 +138,7 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
                     loginbtn.setEnabled(false);
                     loginbtn.setBackgroundColor(Color.GRAY);
                     loginbtn.setTextColor(Color.WHITE);
-//                Toast.makeText(getApplicationContext(), "Maximum attempts reached, login denied", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Maximum attempts reached, login denied", Toast.LENGTH_LONG).show();
                     txtLogin.setTextColor(Color.RED);
                 }
             }
