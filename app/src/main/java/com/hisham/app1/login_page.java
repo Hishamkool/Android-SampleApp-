@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 public class login_page extends AppCompatActivity implements View.OnClickListener {
 
+    // Dont find view by id globally only do that inside on create
+
+
     String defaultUsername = "admin";
     String defaultPassword = "password";
     TextView txtLogin;
@@ -33,15 +36,14 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
 
         txtLogin = (TextView) findViewById(R.id.txtLogin);
         loginbtn = (Button) findViewById(R.id.login);// object "loginbtn" created for login button
+        createacc = (Button) findViewById(R.id.btnCreateacc);
 
-        createacc = (Button)findViewById(R.id.create_account);
-        usernameLogin = (EditText) findViewById(R.id.usernameLogin);
-        passwordLogin = (EditText) findViewById(R.id.passwordLogin);
+        usernameLogin = (EditText) findViewById(R.id.usernameLogin); //loginpage edit text
+        passwordLogin = (EditText) findViewById(R.id.passwordLogin); //loginpage edit text
 
 
-        usernameLoginValue= usernameLogin.getText().toString();
-        passwordLoginValue= passwordLogin.getText().toString();
-
+        usernameLoginValue = usernameLogin.getText().toString();
+        passwordLoginValue = passwordLogin.getText().toString();
         Intent recivedData = getIntent();
         usernameLoginValue = recivedData.getStringExtra("UserName");
         passwordLoginValue = recivedData.getStringExtra("Password");
@@ -75,17 +77,23 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
 //        >>>>>>>>>>> animation test--------------------
 
 
-
         //<<<<<<<<2. button click using Implement method
+
+//        createacc.setOnClickListener(view -> {
+//            Toast.makeText(getApplicationContext(),"signup",Toast.LENGTH_LONG).show();
+//            Intent intobj = new Intent(login_page.this, createaccount.class);
+//            startActivity(intobj);
+//        });
+
 
         createacc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"signup",Toast.LENGTH_LONG).show();
-                Intent intobj = new Intent(login_page.this, createaccount.class);
-                startActivity(intobj);
+                Intent i = new Intent(login_page.this, createaccount.class);
+                startActivity(i);
             }
         });
+
 
         loginbtn.setOnClickListener(this);
 
@@ -94,29 +102,48 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View view) {
 
-
         String testUsername;
         testUsername = usernameLogin.getText().toString();
         String testPassword;
         testPassword = passwordLogin.getText().toString();
+        if (usernameLoginValue == null && passwordLoginValue == null) {
+            if (defaultUsername.equals(testUsername) && defaultPassword.equals(testPassword)) {
+//            Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_LONG).show();
+                Intent intobj = new Intent(getApplicationContext(), home.class);
+                startActivity(intobj);
+                Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_LONG).show();
 
-        if (defaultUsername.equals(testUsername) && defaultPassword.equals(testPassword)) {
-            Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_LONG).show();
-            Intent intobj = new Intent(getApplicationContext(), home.class);
-            startActivity(intobj);
-            Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_LONG).show();
-        } else {
-            maxchance--;
-            Toast.makeText(getApplicationContext(), "Usename or password incorrect", Toast.LENGTH_SHORT).show();
-            if (maxchance == 0) {
-                txtLogin.setText("Login Blocked");
-                loginbtn.setEnabled(false);
-                loginbtn.setBackgroundColor(Color.GRAY);
-                loginbtn.setTextColor(Color.WHITE);
-                Toast.makeText(getApplicationContext(), "Maximum attempts reached, login denied", Toast.LENGTH_LONG).show();
-                txtLogin.setTextColor(Color.RED);
+            } else {
+                maxchance--;
+                Toast.makeText(getApplicationContext(), "Usename or password incorrect", Toast.LENGTH_SHORT).show();
+                if (maxchance == 0) {
+                    txtLogin.setText("Login Blocked");
+                    loginbtn.setEnabled(false);
+                    loginbtn.setBackgroundColor(Color.GRAY);
+                    loginbtn.setTextColor(Color.WHITE);
+//                Toast.makeText(getApplicationContext(), "Maximum attempts reached, login denied", Toast.LENGTH_LONG).show();
+                    txtLogin.setTextColor(Color.RED);
+                }
+            }
+        } else if (usernameLoginValue != null && passwordLoginValue != null) {
+            if (usernameLogin.getText().toString().equals(usernameLoginValue) && passwordLogin.getText().toString().equals(passwordLoginValue)) {
+                Intent intobj = new Intent(getApplicationContext(), home.class);
+                startActivity(intobj);
+                Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_LONG).show();
+            } else {
+                maxchance--;
+                Toast.makeText(getApplicationContext(), "Usename or password incorrect", Toast.LENGTH_SHORT).show();
+                if (maxchance == 0) {
+                    txtLogin.setText("Login Blocked");
+                    loginbtn.setEnabled(false);
+                    loginbtn.setBackgroundColor(Color.GRAY);
+                    loginbtn.setTextColor(Color.WHITE);
+//                Toast.makeText(getApplicationContext(), "Maximum attempts reached, login denied", Toast.LENGTH_LONG).show();
+                    txtLogin.setTextColor(Color.RED);
+                }
             }
         }
+
 
     }
 
@@ -134,7 +161,6 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
 
 
     //    <<<<<<<<<<<<<< Button click for create account using xml file
-
 
 
 }
