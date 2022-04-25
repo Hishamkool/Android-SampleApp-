@@ -64,9 +64,9 @@
                 android:drawableStart="@drawable/_email_24"
                 android:drawablePadding="10dp"
                 android:ems="10"
-                android:textSize="20sp"
-                android:hint="admin"
-                android:inputType="text" />
+                android:inputType="text"
+                android:text="admin"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -86,13 +86,11 @@
                 android:id="@+id/passwordLogin"
                 android:layout_width="192dp"
                 android:layout_height="42dp"
-
                 android:drawableStart="@drawable/password"
                 android:drawablePadding="10dp"
-
                 android:ems="10"
-                android:hint="admin123"
                 android:inputType="textPassword"
+
                 android:textSize="20sp" />
         </LinearLayout>
 
