@@ -32,10 +32,10 @@
 
     <LinearLayout
         android:id="@+id/linearLayoutTop"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="1dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -61,55 +61,6 @@
             android:layout_weight="1"
             android:text="Welcome"
             android:textSize="30sp" />
-
-        <Button
-            android:id="@+id/Check"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="80dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/txtLanguages"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Languages known"
-            android:textSize="20sp" />
-
-        <CheckBox
-            android:id="@+id/checkBox1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Malayalam" />
-
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tamil" />
-
-        <CheckBox
-            android:id="@+id/checkBox3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hindi" />
-
-        <CheckBox
-            android:id="@+id/checkBox4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="English" />
-
 
     </LinearLayout>
 

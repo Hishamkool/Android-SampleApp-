@@ -50,10 +50,10 @@
 
             <TextView
                 android:id="@+id/textView3"
+                android:text="User Name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:text="User Name"
                 android:textSize="20sp" />
 
 
@@ -84,13 +84,13 @@
 
             <EditText
                 android:id="@+id/passwordLogin"
+                android:text="admin123"
                 android:layout_width="192dp"
                 android:layout_height="42dp"
                 android:drawableStart="@drawable/password"
                 android:drawablePadding="10dp"
                 android:ems="10"
                 android:inputType="textPassword"
-
                 android:textSize="20sp" />
         </LinearLayout>
 

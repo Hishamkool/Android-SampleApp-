@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         // <<<<<<<  for splash screen using handler
 //        Handler obj = new Handler();
 //        obj.postDelayed(new Runnable() {
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                Intent intentobj = new Intent(MainActivity.this, login_page.class);
+                Intent intentobj = new Intent(MainActivity.this, allActivitiesJunction.class);
                 startActivity(intentobj);
                 finish();
 

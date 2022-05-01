@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -25,6 +26,7 @@ public class createaccount extends AppCompatActivity implements View.OnClickList
     ArrayAdapter arrayAdapter_selectState;
     ArrayAdapter arrayAdapter_selectAge;
     ArrayList<String> arrayList_Age;
+    CheckBox c1, c2, c3, c4;
 
 
     @Override
@@ -42,6 +44,7 @@ public class createaccount extends AppCompatActivity implements View.OnClickList
 
         age = findViewById(R.id.spinner_Age);
         arrayList_Age = new ArrayList();
+        arrayList_Age.add("Select your age");
         arrayList_Age.add("18");
         arrayList_Age.add("< 18");
         arrayList_Age.add("> 18");
@@ -50,7 +53,7 @@ public class createaccount extends AppCompatActivity implements View.OnClickList
 
 
         //click on spinner for state
-        // Since its a drop down menu we need setOnItemSelezted listener , but if it was only a list view we
+        // Since its a drop down menu we need setOnItemSelected listener , but if it was only a list view we
 //       can use setOnItemClickedListerner
         st.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -80,6 +83,13 @@ public class createaccount extends AppCompatActivity implements View.OnClickList
 
             }
         });
+
+        // checkboxes
+
+        c1 = findViewById(R.id.checkBox1);
+        c2 = findViewById(R.id.checkBox2);
+        c3 = findViewById(R.id.checkBox3);
+        c4 = findViewById(R.id.checkBox4);
 
     }
 

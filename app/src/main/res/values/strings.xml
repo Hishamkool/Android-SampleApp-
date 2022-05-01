@@ -4,4 +4,9 @@
     <string name="image">image</string>
     <string name="createacc">Create account</string>
     <string name="contify">Contify</string>
+    <string name="title_activity_webview_implicit">webviewImplicit</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_web_view_implicit_intent">webViewImplicitIntent</string>
+    <string name="hi_there">hi there</string>
 </resources>
