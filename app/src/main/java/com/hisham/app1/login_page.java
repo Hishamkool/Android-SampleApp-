@@ -99,6 +99,12 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
 
     }
 
+    public void allActivities(View view) {
+        Intent splash = new Intent(getApplicationContext(), allActivitiesJunction.class);
+        startActivity(splash);
+
+    }
+
     @Override
     public void onClick(View view) {
 

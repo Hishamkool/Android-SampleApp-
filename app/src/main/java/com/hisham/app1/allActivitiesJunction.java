@@ -53,6 +53,18 @@ public class allActivitiesJunction extends AppCompatActivity {
         Intent splash = new Intent(getApplicationContext(), implicitIntent.class);
         startActivity(splash);
     }
+
+    public void webVIew(View view) {
+        Intent splash = new Intent(getApplicationContext(), webViewinsidepage.class);
+        startActivity(splash);
+
+    }
+
+    public void horizontalscroll(View view) {
+        Intent splash = new Intent(getApplicationContext(), HorizontalScroll.class);
+        startActivity(splash);
+    }
+
     @Override
     public void onBackPressed() {
         //Listening back pressed
@@ -89,4 +101,5 @@ public class allActivitiesJunction extends AppCompatActivity {
 
 
     }
+
 }

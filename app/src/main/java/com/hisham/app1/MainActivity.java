@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                Intent intentobj = new Intent(MainActivity.this, allActivitiesJunction.class);
-                startActivity(intentobj);
+                Intent i = new Intent(MainActivity.this, login_page.class);
+                startActivity(i);
                 finish();
 
             }

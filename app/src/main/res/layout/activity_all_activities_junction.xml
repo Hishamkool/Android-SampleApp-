@@ -65,14 +65,11 @@
                 tools:layout_editor_absoluteY="183dp" />
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/button2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/cardview_dark_background"
-                android:text="Button"
-
-                tools:layout_editor_absoluteX="199dp"
-                tools:layout_editor_absoluteY="333dp" />
+                android:text="gameScroll"
+                android:onClick="horizontalscroll"/>
 
         </TableRow>
 
@@ -120,8 +117,20 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/cardview_dark_background"
                 android:text="implicit intent"
+                android:onClick="implicitIntent"
                 tools:layout_editor_absoluteX="43dp"
                 tools:layout_editor_absoluteY="287dp" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/cardview_dark_background"
+                android:text="webVIew"
+                android:onClick="webVIew"
+
+                tools:layout_editor_absoluteX="199dp"
+                tools:layout_editor_absoluteY="333dp" />
 
         </TableRow>
 
