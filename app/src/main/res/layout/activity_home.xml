@@ -6,30 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".home">
 
-    <!--  <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="You have logged in \n successfully"
-        android:textSize="35dp"
-
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.50"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/homebtn"
-        android:layout_width="40dp"
-        android:layout_height="51dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/arrow_back_ios_24" />-->
-
-
     <LinearLayout
         android:id="@+id/linearLayoutTop"
         android:layout_width="match_parent"

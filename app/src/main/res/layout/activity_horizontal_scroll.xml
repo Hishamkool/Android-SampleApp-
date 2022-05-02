@@ -7,17 +7,17 @@
     tools:context=".HorizontalScroll">
 
     <TextView
+        android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="93dp"
+        android:text="Choose Game"
+        android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="Choose Game"
-        android:textSize="35sp"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <HorizontalScrollView
@@ -106,6 +106,7 @@
         </LinearLayout>
 
     </HorizontalScrollView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
