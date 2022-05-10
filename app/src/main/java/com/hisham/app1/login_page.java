@@ -1,15 +1,22 @@
 package com.hisham.app1;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.hisham.app1.apprating.ratingActivitty;
 
 
 public class login_page extends AppCompatActivity implements View.OnClickListener {
@@ -127,7 +134,7 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
                     loginbtn.setEnabled(false);
                     loginbtn.setBackgroundColor(Color.GRAY);
                     loginbtn.setTextColor(Color.WHITE);
-                Toast.makeText(getApplicationContext(), "Maximum attempts reached, login denied", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Maximum attempts reached, login denied", Toast.LENGTH_LONG).show();
                     txtLogin.setTextColor(Color.RED);
                 }
             }
@@ -144,7 +151,7 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
                     loginbtn.setEnabled(false);
                     loginbtn.setBackgroundColor(Color.GRAY);
                     loginbtn.setTextColor(Color.WHITE);
-                Toast.makeText(getApplicationContext(), "Maximum attempts reached, login denied", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Maximum attempts reached, login denied", Toast.LENGTH_LONG).show();
                     txtLogin.setTextColor(Color.RED);
                 }
             }
@@ -169,4 +176,70 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
     //    <<<<<<<<<<<<<< Button click for create account using xml file
 
 
+    @Override
+    //Menu popup
+    public boolean onCreateOptionsMenu(Menu menu123) {
+        getMenuInflater().inflate(R.menu.optionmenu, menu123);
+        // option menu is the name of the menu file we created , menu123 is the instance give any name
+        return super.onCreateOptionsMenu(menu123);
+    }
+
+    @Override
+    // Menu item click
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.ratePage:
+                Intent i = new Intent(getApplicationContext(), ratingActivitty.class);
+                startActivity(i);
+                break;
+
+            case R.id.websitePage:
+                Intent i1 = new Intent(getApplicationContext(), implicitIntent.class);
+                startActivity(i1);
+                break;
+
+            case R.id.createAccPage:
+                Intent i2 = new Intent(getApplicationContext(), createaccount.class);
+                startActivity(i2);
+                break;
+        }
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        //Listening back pressed
+
+        //Alert structure
+        AlertDialog.Builder alertobj = new AlertDialog.Builder(this);
+        alertobj.setTitle("Exit?")
+                .setMessage("Do you want to exit?")  //or alert.setMessage("hi");
+                //  alertobj.setTitle("hjhijadfh").setCancelable();
+                .setCancelable(false);  //doesnot close the dialog box on clicking outside the dialogbox
+        alertobj.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+        alertobj.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        alertobj.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+
+        //Creating alert
+        AlertDialog obj = alertobj.create();
+        alertobj.show();
+
+
+    }
 }

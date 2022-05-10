@@ -98,7 +98,6 @@ public class createaccount extends AppCompatActivity implements View.OnClickList
         EditText user = (EditText) findViewById(R.id.edittxtUserName);
         EditText pass = (EditText) findViewById(R.id.edittxtUsePassword);
 
-
         Intent i = new Intent(createaccount.this, login_page.class);
         UserName = user.getText().toString();
         Password = pass.getText().toString();
@@ -113,4 +112,25 @@ public class createaccount extends AppCompatActivity implements View.OnClickList
     }
 
 
+    public void chekbox(View checkboxselected123) {
+
+        boolean checkedornot = ((CheckBox) checkboxselected123).isChecked(); //true or false value
+        String variable1 = "";
+
+        switch (checkboxselected123.getId()) {
+            case R.id.checkBox1:
+                variable1 = checkedornot ? "if true then print this " : "if false then print this"; //terneri operator
+                break;
+            case R.id.checkBox2:
+                variable1 = checkedornot ? "Tamil selected" : "Tamil deselected";  // value will be stored in the variable1
+                break;
+            case R.id.checkBox3:
+                variable1 = checkedornot ? "Hindi selected" : "Hindi deselected";
+            case R.id.checkBox4:
+                variable1 = checkedornot ? "English selected" : "English deselected";
+                break;
+        }
+        Toast.makeText(this, variable1+".", Toast.LENGTH_SHORT).show();
+
+    }
 }

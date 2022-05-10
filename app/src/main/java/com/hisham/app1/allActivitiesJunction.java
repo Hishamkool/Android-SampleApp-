@@ -64,42 +64,4 @@ public class allActivitiesJunction extends AppCompatActivity {
         Intent splash = new Intent(getApplicationContext(), HorizontalScroll.class);
         startActivity(splash);
     }
-
-    @Override
-    public void onBackPressed() {
-        //Listening back pressed
-
-        //Alert structure
-        AlertDialog.Builder alertobj = new AlertDialog.Builder(this);
-        alertobj.setTitle("Exit?")
-                .setMessage("Do you want to exit?")  //or alert.setMessage("hi");
-        //  alertobj.setTitle("hjhijadfh").setCancelable();
-                .setCancelable(false);  //doesnot close the dialog box on clicking outside the dialogbox
-        alertobj.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                finish();
-            }
-        });
-        alertobj.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-            }
-        });
-        alertobj.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-            }
-        });
-
-        //Creating alert
-        AlertDialog obj = alertobj.create();
-        alertobj.show();
-
-
-
-    }
-
 }

@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                Intent i = new Intent(MainActivity.this, webViewinsidepage.class);
+                Intent i = new Intent(MainActivity.this, TimePicker_activity.class);
                 startActivity(i);
                 finish();
 

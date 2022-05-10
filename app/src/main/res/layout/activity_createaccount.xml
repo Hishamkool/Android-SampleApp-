@@ -15,8 +15,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <TextView
@@ -271,31 +270,33 @@
                         android:id="@+id/checkBox1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="chekbox"
                         android:text="Malayalam" />
 
                     <CheckBox
                         android:id="@+id/checkBox2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="chekbox"
                         android:text="Tamil" />
 
                     <CheckBox
                         android:id="@+id/checkBox3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="chekbox"
                         android:text="Hindi" />
 
                     <CheckBox
                         android:id="@+id/checkBox4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="chekbox"
                         android:text="English" />
 
                 </TableRow>
             </TableLayout>
         </TableLayout>
-
-
 
 
     </ScrollView>
@@ -315,8 +316,7 @@
             android:layout_height="wrap_content"
             android:background="@color/cardview_light_background"
             android:text="Submit"
-            android:textStyle="bold"
-             />
+            android:textStyle="bold" />
     </LinearLayout>
 
 
