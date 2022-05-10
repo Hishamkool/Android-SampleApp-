@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                Intent i = new Intent(MainActivity.this, TimePicker_activity.class);
+                Intent i = new Intent(MainActivity.this, timePicker_withEdittext.class);
                 startActivity(i);
                 finish();
 

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hishamkool">
         <activity
+            android:name=".timePicker_withEdittext"
+            android:exported="false" />
+        <activity
             android:name=".TimePicker_activity"
             android:exported="false" />
         <activity
